@@ -1,0 +1,12 @@
+﻿@page "{id}"
+@model DetailsModel
+
+<h2>Document Details</h2>
+
+<ul>
+    <li>Name: @Model.Document["name"]</li>
+    <li>Email: @Model.Document["email"]</li>
+    <li>Age: @Model.Document["age"]</li>
+</ul>
+
+<a asp-page="./Index">Back to List</a>

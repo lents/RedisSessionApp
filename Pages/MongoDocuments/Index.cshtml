@@ -1,0 +1,30 @@
+﻿@page
+@model IndexModel
+
+<h2>MongoDB Documents</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Age</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var doc in Model.Documents)
+        {
+            <tr>
+                <td>@doc["name"]</td>
+                <td>@doc["email"]</td>
+                <td>@doc["age"]</td>
+                <td>
+                    <a asp-page="./Details" asp-route-id="@doc["_id"]">View</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-page="./Create">Add New Document</a>
